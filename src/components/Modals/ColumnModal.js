@@ -51,6 +51,10 @@ class ColumnModal extends Component<Props, State> {
   unsigned: any;
   foreignKey: any;
   form: any;
+  HomeShowOnIndex: any;
+  HomeShowOnCreate: any;
+  AdminShowOnIndex: any;
+  AdminShowOnCreate: any;
 
   componentWillReceiveProps(nextProps: Props) {
     // For edit action
@@ -74,6 +78,10 @@ class ColumnModal extends Component<Props, State> {
       unique: this.unique.checked,
       index: this.index.checked,
       unsigned: this.unsigned.checked,
+      HomeShowOnIndex: this.HomeShowOnIndex.checked,
+      HomeShowOnCreate: this.HomeShowOnCreate.checked,
+      AdminShowOnIndex: this.AdminShowOnIndex.checked,
+      AdminShowOnCreate: this.AdminShowOnCreate.checked,
       foreignKey: {
         references: {
           id: "",
@@ -508,7 +516,60 @@ class ColumnModal extends Component<Props, State> {
                 </label>
               </div>
             </div>
-
+            <div className="form-group">
+              <strong className="col-xs-3 control-label">Home View:</strong>
+              <div className="col-xs-9">
+                <label className="checkbox-inline" htmlFor="HomeShowOnIndex">
+                  <input
+                    type="checkbox"
+                    id="HomeShowOnIndex"
+                    ref={(HomeShowOnIndex) => {
+                      this.HomeShowOnIndex = HomeShowOnIndex;
+                    }}
+                    defaultChecked={editData.HomeShowOnIndex}
+                  />{" "}
+                  Show On Index
+                </label>
+                <label className="checkbox-inline" htmlFor="HomeShowOnCreate">
+                  <input
+                    type="checkbox"
+                    id="HomeShowOnCreate"
+                    ref={(HomeShowOnCreate) => {
+                      this.HomeShowOnCreate = HomeShowOnCreate;
+                    }}
+                    defaultChecked={editData.HomeShowOnCreate}
+                  />{" "}
+                  Show On Create
+                </label>
+              </div>
+            </div>
+            <div className="form-group">
+              <strong className="col-xs-3 control-label">Admin View:</strong>
+              <div className="col-xs-9">
+                <label className="checkbox-inline" htmlFor="AdminShowOnIndex">
+                  <input
+                    type="checkbox"
+                    id="AdminShowOnIndex"
+                    ref={(AdminShowOnIndex) => {
+                      this.AdminShowOnIndex = AdminShowOnIndex;
+                    }}
+                    defaultChecked={editData.AdminShowOnIndex}
+                  />{" "}
+                  Show On Index
+                </label>
+                <label className="checkbox-inline" htmlFor="AdminShowOnCreate">
+                  <input
+                    type="checkbox"
+                    id="AdminShowOnCreate"
+                    ref={(AdminShowOnCreate) => {
+                      this.AdminShowOnCreate = AdminShowOnCreate;
+                    }}
+                    defaultChecked={editData.AdminShowOnCreate}
+                  />{" "}
+                  Show On Create
+                </label>
+              </div>
+            </div>
             {foreignKeyEnabled && (
               <ForeignKeyForm
                 ref={(foreignKey) => {
