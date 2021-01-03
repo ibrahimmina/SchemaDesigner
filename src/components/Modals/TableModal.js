@@ -32,6 +32,7 @@ class TableModal extends Component<Props, State> {
     color: any
     softdelete: any
     timestamp: any
+    showOnNavBar: any
 
     focusInput = () => {
         this.name.focus();
@@ -47,7 +48,8 @@ class TableModal extends Component<Props, State> {
             name: this.name.value.trim().toLowerCase(),
             color: this.color.value.trim(),
             softDelete: this.softdelete.checked,
-            timeStamp: this.timestamp.checked
+            timeStamp: this.timestamp.checked,
+            showOnNavBar: this.showOnNavBar.checked
         };
 
         if (!data.name) {
@@ -170,6 +172,18 @@ class TableModal extends Component<Props, State> {
                                 /> Timestamp
                             </label>
                         </div>
+                        <div className='checkbox'>
+                            <label htmlFor='showOnNavBar'>
+                                <input
+                                    type='checkbox'
+                                    id='showOnNavBar'
+                                    ref={ (showOnNavBar) => {
+                                        this.showOnNavBar = showOnNavBar;
+                                    } }
+                                    defaultChecked={ editData.showOnNavBar }
+                                /> Show On Nav Bar
+                            </label>
+                        </div>                        
                     </form>
                 </Modal.Body>
 
