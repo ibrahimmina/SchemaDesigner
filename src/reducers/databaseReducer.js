@@ -1,14 +1,14 @@
-import * as types from '../actions/constants';
+import * as types from "../actions/constants";
 
 const initialState = {
-    name: ''
+  name: ""
 };
 
 export default (state = initialState, action) => {
-    switch (action.type) {
-        case types.SAVE_DB_NAME:
-            return { name: action.name };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case types.SAVE_DB_NAME:
+      return { name: action.name, data: action.data };
+    default:
+      return state;
+  }
 };

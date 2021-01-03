@@ -37,6 +37,13 @@ export type TableType = {
   timeStamp: boolean
 };
 
+export type DBType = {
+  dbpassword: string,
+  machineUser: string,
+  machinePassword: string,
+  dstDirectory: string
+};
+
 export type RelationType = {
   source: {
     tableId: string,
