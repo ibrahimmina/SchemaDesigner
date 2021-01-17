@@ -1,4 +1,4 @@
-# Database schema designer
+# Database schema designer - Latest Code
 
 Design your database diagram with ease. To get started, checkout **[agontuk.github.io/schema-designer](https://agontuk.github.io/schema-designer)**
 
