@@ -62,63 +62,114 @@ class DbModal extends Component<Props> {
 
     return (
       <Modal show={showModal} onHide={this.toggleDbModal}>
+        <Modal.Header>
+          <Modal.Title>Project Configuration </Modal.Title>
+        </Modal.Header>
         <Modal.Body>
-          <form onSubmit={this.handleSubmit}>
-            <input
-              className="form-control input-lg"
-              ref={(dbname) => {
-                this.dbname = dbname;
-              }}
-              type="text"
-              placeholder="Enter Database Name"
-              defaultValue={name}
-              autoFocus
-            />
-            <input
-              className="form-control input-lg"
-              ref={(db_user) => {
-                this.db_user = db_user;
-              }}
-              type="text"
-              placeholder="Enter Database User"
-              autoFocus
-            />
-            <input
-              className="form-control input-lg"
-              ref={(db_password) => {
-                this.db_password = db_password;
-              }}
-              type="text"
-              placeholder="Enter Database Password"
-              autoFocus
-            />
-            <input
-              className="form-control input-lg"
-              ref={(machine_User) => {
-                this.machine_User = machine_User;
-              }}
-              type="text"
-              placeholder="Enter Machine User"
-              autoFocus
-            />
-            <input
-              className="form-control input-lg"
-              ref={(machine_Password) => {
-                this.machine_Password = machine_Password;
-              }}
-              type="text"
-              placeholder="Enter Machine Password"
-              autoFocus
-            />
-            <input
-              className="form-control input-lg"
-              ref={(dst_Directory) => {
-                this.dst_Directory = dst_Directory;
-              }}
-              type="text"
-              placeholder="Enter Destination Directory"
-              autoFocus
-            />
+          <form className="form-horizontal" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label className="col-xs-3 control-label" htmlFor="name">
+                Database Name:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(dbname) => {
+                    this.dbname = dbname;
+                  }}
+                  type="text"
+                  placeholder="Enter Database Name"
+                  defaultValue={name}
+                  autoFocus
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <label className="col-xs-3 control-label" htmlFor="db_user">
+                Database User:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(db_user) => {
+                    this.db_user = db_user;
+                  }}
+                  type="text"
+                  placeholder="Enter Database User"
+                  autoFocus
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <label className="col-xs-3 control-label" htmlFor="db_password">
+                Database Password:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(db_password) => {
+                    this.db_password = db_password;
+                  }}
+                  type="text"
+                  placeholder="Enter Database Password"
+                  autoFocus
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="col-xs-3 control-label" htmlFor="machine_User">
+                Machine Root User:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(machine_User) => {
+                    this.machine_User = machine_User;
+                  }}
+                  type="text"
+                  placeholder="Enter Machine User"
+                  autoFocus
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label
+                className="col-xs-3 control-label"
+                htmlFor="machine_Password"
+              >
+                Machine Root Password:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(machine_Password) => {
+                    this.machine_Password = machine_Password;
+                  }}
+                  type="text"
+                  placeholder="Enter Machine Password"
+                  autoFocus
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label className="col-xs-3 control-label" htmlFor="dst_Directory">
+                Destination Project Directory:
+              </label>
+              <div className="col-xs-9">
+                <input
+                  className="form-control"
+                  ref={(dst_Directory) => {
+                    this.dst_Directory = dst_Directory;
+                  }}
+                  type="text"
+                  placeholder="Enter Destination Directory"
+                  autoFocus
+                />
+              </div>
+            </div>
           </form>
         </Modal.Body>
         <Modal.Footer className="modal-footer text-right">
